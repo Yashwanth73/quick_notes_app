@@ -21,8 +21,6 @@ class _EditNotesState extends State<EditNotes> {
   final NotesController notesController = Get.put(NotesController());
   TextEditingController title = TextEditingController(),
       note = TextEditingController();
-  String etitle = "", enote = "";
-  bool isEditingMode = false;
   @override
   void initState() {
     super.initState();
@@ -82,12 +80,6 @@ class _EditNotesState extends State<EditNotes> {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
             child: TextFormField(
               controller: title,
-              // initialValue: etitle,
-              onChanged: (value) {
-                setState(() {
-                  etitle = value;
-                });
-              },
               style: const TextStyle(fontSize: 24, color: Colors.black),
               decoration: const InputDecoration(
                   border: InputBorder.none,
@@ -102,12 +94,6 @@ class _EditNotesState extends State<EditNotes> {
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                 child: TextFormField(
                   controller: note,
-                  // initialValue: enote,
-                  onChanged: (value) {
-                    setState(() {
-                      enote = value;
-                    });
-                  },
                   style: const TextStyle(fontSize: 20, color: Colors.black),
                   decoration: const InputDecoration(
                       border: InputBorder.none,

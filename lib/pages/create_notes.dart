@@ -14,7 +14,7 @@ class _CreateNotesState extends State<CreateNotes> {
   final NotesController notesController = Get.put(NotesController());
   TextEditingController title = TextEditingController(),
       note = TextEditingController();
-  String etitle = "", enote = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,11 +66,6 @@ class _CreateNotesState extends State<CreateNotes> {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
             child: TextFormField(
               controller: title,
-              onChanged: (value) {
-                setState(() {
-                  etitle = value;
-                });
-              },
               style: const TextStyle(fontSize: 24, color: Colors.black),
               decoration: const InputDecoration(
                   border: InputBorder.none,
@@ -85,11 +80,6 @@ class _CreateNotesState extends State<CreateNotes> {
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                 child: TextFormField(
                   controller: note,
-                  onChanged: (value) {
-                    setState(() {
-                      enote = value;
-                    });
-                  },
                   style: const TextStyle(fontSize: 20, color: Colors.black),
                   decoration: const InputDecoration(
                       border: InputBorder.none,
